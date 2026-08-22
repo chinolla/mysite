@@ -1,0 +1,203 @@
+/* Twitter-style profile header — scales as one unit */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__banner {
+  width: 100%;
+  height: var(--banner-height);
+  overflow: hidden;
+  background: var(--rule);
+  flex-shrink: 0;
+}
+
+.profile__banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile__main {
+  padding: 0 var(--pad-x) 1.25rem;
+  margin-top: calc(var(--avatar-overlap) * -1);
+  position: relative;
+  z-index: 1;
+}
+
+.profile__avatar-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: var(--avatar-size);
+  margin-bottom: 0.65rem;
+}
+
+.profile__avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--rule);
+  border: 4px solid var(--surface);
+  flex-shrink: 0;
+}
+
+.profile__name {
+  margin: 0;
+  font-size: clamp(1.15rem, 4.5vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.profile__handle {
+  margin: 0.1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.profile__bio {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.profile__updated {
+  margin: 1.25rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+/* Mobile: icon row top-right beside avatar */
+.profile__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.35rem;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0.35rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.profile-link:hover {
+  color: var(--twitter-blue);
+  background: color-mix(in srgb, var(--twitter-blue) 10%, transparent);
+  text-decoration: none;
+}
+
+/* Mobile: icon only; label stays available to screen readers */
+.profile-link__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.icon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Desktop: slim column; links + labels under bio */
+@media (min-width: 64rem) {
+  .profile {
+    min-height: 100%;
+  }
+
+  .profile__main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Flatten so links can sit below bio */
+  .profile__avatar-row {
+    display: contents;
+  }
+
+  .profile__avatar {
+    order: 1;
+    margin-bottom: 0.65rem;
+  }
+
+  .profile__name {
+    order: 2;
+    font-size: 1.35rem;
+  }
+
+  .profile__handle {
+    order: 3;
+  }
+
+  .profile__bio {
+    order: 4;
+  }
+
+  .profile__links {
+    order: 5;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    margin-top: 1.15rem;
+    padding: 0;
+  }
+
+  .profile-link {
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.4rem 0.45rem;
+  }
+
+  .profile-link__label {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    clip: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9375rem;
+    line-height: 1.3;
+  }
+
+  .profile__updated {
+    order: 6;
+    margin-top: auto;
+    padding-top: 1.5rem;
+  }
+}
