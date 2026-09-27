@@ -41,6 +41,7 @@
   height: var(--avatar-size);
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 72%;
   background: var(--rule);
   border: 4px solid var(--surface);
   flex-shrink: 0;

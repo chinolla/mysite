@@ -9,7 +9,7 @@ partials load.
 index.html
 partials/
   profile.inc       banner, avatar, name, bio, links
-  content.inc       tabs + work/archive/about
+  content.inc       tabs + work/about
 css/
   base.css
   profile.css
@@ -27,7 +27,6 @@ media/
 ## Tabs
 
 - **Work** — project posts
-- **Archive** — older items
 - **About me** — bio
 
 ## Notes

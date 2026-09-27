@@ -2,8 +2,9 @@
   --ink:         #0F1419;
   --ink-soft:    #536471;
   --rule:        #EFF3F4;
-  --accent:      #C45C26;
-  --twitter-blue: #1D9BF0;
+  /* Tech green accent */
+  --accent:      #0F9F6E;
+  --twitter-blue: var(--accent);
 
   --surface:     #FFFFFF;
   --card-bg:     #FFFFFF;
@@ -25,8 +26,8 @@
     --ink:         #E7E9EA;
     --ink-soft:    #8B98A5;
     --rule:        #2F3336;
-    --accent:      #E8956A;
-    --twitter-blue: #1D9BF0;
+    --accent:      #34D399;
+    --twitter-blue: var(--accent);
 
     --surface:     #000000;
     --card-bg:     #000000;
@@ -113,7 +114,7 @@ a:focus-visible {
   }
 }
 
-/* Desktop: profile | content side by side — fill the viewport */
+/* Desktop: profile | content side by side — only content scrolls */
 @media (min-width: 64rem) {
   :root {
     --profile-col: minmax(22rem, 28rem);
@@ -122,12 +123,20 @@ a:focus-visible {
     --pad-x: 1.15rem;
   }
 
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .shell {
     display: grid;
     grid-template-columns: var(--profile-col) minmax(0, 1fr);
     align-items: stretch;
-    min-height: 100vh;
+    height: 100%;
+    max-height: 100vh;
     width: 100%;
+    overflow: hidden;
   }
 
   .profile-panel {
@@ -136,21 +145,21 @@ a:focus-visible {
     margin: 0;
     border-left: none;
     border-right: 1px solid var(--rule);
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    min-height: 100vh;
+    height: 100%;
+    max-height: 100vh;
     align-self: stretch;
-    overflow-y: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
 
   .profile {
     flex: 1;
-    min-height: 100%;
+    min-height: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
   }
 
   .content-panel {
@@ -159,6 +168,11 @@ a:focus-visible {
     margin: 0;
     border-left: none;
     border-right: none;
-    min-height: 100vh;
+    height: 100%;
+    max-height: 100vh;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }

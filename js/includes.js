@@ -5,6 +5,8 @@
 
   if (!nodes.length) {
     if (window.initProfileTabs) window.initProfileTabs();
+    if (window.initCarousels) window.initCarousels();
+    if (window.initLightbox) window.initLightbox();
     return;
   }
 
@@ -32,6 +34,8 @@
   )
     .then(function () {
       if (window.initProfileTabs) window.initProfileTabs();
+      if (window.initCarousels) window.initCarousels();
+      if (window.initLightbox) window.initLightbox();
     })
     .catch(function (err) {
       console.error(err);
