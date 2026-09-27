@@ -57,7 +57,12 @@
       <h1 class="profile__name">Cris Chinolla</h1>
       <p class="profile__handle">@chinolla</p>
       <p class="profile__bio">can make it happen</p>
-      <p class="profile__updated">Last updated August 2026</p>
+      <p class="profile__location">
+        <svg class="profile__location-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+        </svg>
+        <span>Austin, TX</span>
+      </p>
     </div>
   </header>
 </aside>

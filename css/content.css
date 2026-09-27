@@ -291,11 +291,15 @@
   height: 1.15rem;
 }
 
-/* Prefer native swipe on touch devices; keep arrows for mouse/trackpad */
-@media (pointer: coarse) {
-  .carousel__btn {
-    display: none;
-  }
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1rem var(--pad-x) 2rem;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+.site-footer p {
+  margin: 0;
 }
 
 .feed-empty {

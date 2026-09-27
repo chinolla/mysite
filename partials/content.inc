@@ -459,4 +459,8 @@
       </div>
     </div>
   </section>
+
+  <footer class="site-footer">
+    <p>Last updated September 2026</p>
+  </footer>
 </main>

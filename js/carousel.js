@@ -18,6 +18,7 @@ window.initCarousels = function initCarousels() {
     if (!scroller || !track || !slides.length) return;
 
     var gap = 2;
+    var multi = slides.length > 2;
 
     function maxSlideWidth() {
       var raw = getComputedStyle(root).getPropertyValue("--carousel-slide-max").trim();
@@ -33,13 +34,10 @@ window.initCarousels = function initCarousels() {
     function slideWidth() {
       var available = scroller.clientWidth;
       var maxW = maxSlideWidth();
-      // How many max-sized slides fit in the visible area?
       var fit = Math.floor((available + gap) / (maxW + gap));
       if (fit >= 2) {
-        // Show as many as fit at the capped photo size
         return maxW;
       }
-      // Narrow screens: always show two by shrinking slightly
       return Math.max(0, (available - gap) / 2);
     }
 
@@ -54,15 +52,20 @@ window.initCarousels = function initCarousels() {
 
     function updateButtons() {
       var maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      var canScroll = maxScroll > 2;
       var atStart = scroller.scrollLeft <= 2;
-      var atEnd = maxScroll <= 2 || scroller.scrollLeft >= maxScroll - 2;
+      var atEnd = !canScroll || scroller.scrollLeft >= maxScroll - 2;
+
+      // Only show arrows when there are more than 2 photos and overflow
       if (prevBtn) {
-        prevBtn.hidden = atStart;
-        prevBtn.disabled = atStart;
+        var showPrev = multi && canScroll && !atStart;
+        prevBtn.hidden = !showPrev;
+        prevBtn.disabled = !showPrev;
       }
       if (nextBtn) {
-        nextBtn.hidden = atEnd;
-        nextBtn.disabled = atEnd;
+        var showNext = multi && canScroll && !atEnd;
+        nextBtn.hidden = !showNext;
+        nextBtn.disabled = !showNext;
       }
     }
 
