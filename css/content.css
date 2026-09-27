@@ -124,6 +124,59 @@
   color: var(--twitter-blue);
 }
 
+.post__details {
+  margin: 0;
+}
+
+.post__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0.15rem 0 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.post__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.post__toggle::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -0.15rem;
+  transition: transform 0.15s ease;
+}
+
+.post__details[open] > .post__toggle::after {
+  transform: rotate(-135deg);
+  margin-top: 0.15rem;
+}
+
+.post__toggle-less {
+  display: none;
+}
+
+.post__details[open] > .post__toggle .post__toggle-more {
+  display: none;
+}
+
+.post__details[open] > .post__toggle .post__toggle-less {
+  display: inline;
+}
+
+.post__details[open] > .post__toggle {
+  margin-bottom: 0.75rem;
+}
+
 .post__content p {
   margin: 0 0 0.85rem;
   font-size: 0.9375rem;

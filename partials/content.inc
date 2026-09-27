@@ -24,6 +24,11 @@
               in real time, and physically points at them with a pan-tilt mount.
               It runs entirely on a Jetson Orin Nano.
             </p>
+            <details class="post__details">
+              <summary class="post__toggle">
+                <span class="post__toggle-more">Read more</span>
+                <span class="post__toggle-less">Show less</span>
+              </summary>
             <div class="post__content">
               <p>
                 I'm building a small counter-drone sensing demo on an NVIDIA
@@ -64,6 +69,7 @@
               <li>computer vision</li>
               <li>in progress</li>
             </ul>
+            </details>
           </div>
         </article>
       </li>
@@ -81,6 +87,11 @@
               live transcription, translation, and report tooling. Built
               end to end and fielded with units in Korea and Germany.
             </p>
+            <details class="post__details">
+              <summary class="post__toggle">
+                <span class="post__toggle-more">Read more</span>
+                <span class="post__toggle-less">Show less</span>
+              </summary>
             <div class="post__content">
               <p>
                 CIPHER is the Central Intelligence Platform for HUMINT Evaluation
@@ -180,6 +191,7 @@
               <li>business development</li>
               <li>field engineering</li>
             </ul>
+            </details>
           </div>
         </article>
       </li>
@@ -197,6 +209,11 @@
               messaging, ran field demos with operators, and helped take it
               to DoW GOTS acquisition.
             </p>
+            <details class="post__details">
+              <summary class="post__toggle">
+                <span class="post__toggle-more">Read more</span>
+                <span class="post__toggle-less">Show less</span>
+              </summary>
             <div class="post__content">
               <p>
                 Tactilink is software I worked on at SEVA Innovations for chat
@@ -260,6 +277,7 @@
               <li>field engineering</li>
               <li>business development</li>
             </ul>
+            </details>
           </div>
         </article>
       </li>
@@ -277,6 +295,11 @@
               with friends, weekly leaderboards, and an XP/rank system that
               rewarded consistency over PRs.
             </p>
+            <details class="post__details">
+              <summary class="post__toggle">
+                <span class="post__toggle-more">Read more</span>
+                <span class="post__toggle-less">Show less</span>
+              </summary>
             <div class="post__content">
               <p>
                 Statis was a mobile app I published in 2025. It started as a side
@@ -345,6 +368,7 @@
               <li>product</li>
               <li>solo founder</li>
             </ul>
+            </details>
           </div>
         </article>
       </li>

@@ -96,4 +96,15 @@ window.initCarousels = function initCarousels() {
 
     layout();
   });
+
+  // Relayout carousels when a collapsed post expands
+  Array.prototype.forEach.call(
+    document.querySelectorAll(".post__details"),
+    function (details) {
+      details.addEventListener("toggle", function () {
+        if (!details.open) return;
+        window.dispatchEvent(new Event("resize"));
+      });
+    }
+  );
 };
